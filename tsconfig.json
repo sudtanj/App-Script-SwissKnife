@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+      "allowJs": true,
+      "checkJs": true,
+      "types": ["google-apps-script"],
+    "lib": [
+      "decorators",
+      "dom",
+      "es5",
+      "scripthost",
+      "ES2015.Collection", "ES2015.Iterable", "ES2015"
+    ]
+  }
+}

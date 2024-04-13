@@ -1,6 +1,11 @@
 {
   "timeZone": "Asia/Jakarta",
   "dependencies": {
+    "libraries": [{
+      "userSymbol": "UnderscoreGS",
+      "libraryId": "1PcEHcGVC1njZd8SfXtmgQk19djwVd2GrrW1gd7U5hNk033tzi6IUvIAV",
+      "version": "4"
+    }]
   },
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8"
