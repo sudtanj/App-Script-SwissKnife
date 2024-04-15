@@ -10,9 +10,10 @@ export async function run_steam_gifts_worker() {
     const codes = lib.getGiveawayList()
     for (const code of codes) {
         const res = lib.joinGiveaway(code)
-        if (res.type != "success" || lib.currentPoint < 5) {
+        if (lib.currentPoint < 20) {
             break
         }
+        Logger.log(res)
         Logger.log("success join code " + code)
         await TimeUtils.sleepRandBetween(1000, 10000)
     }
