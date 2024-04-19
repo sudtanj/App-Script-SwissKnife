@@ -1,10 +1,10 @@
 export class GOGHelper {
-    static parseAndFindTokenFromMail(message: string) {
+    static parseAndFindTokenFromMail(message: string): [string, Error | null] {
         const regex = /Your two-step security code: ([0-9]+)/i
         const matches = message.match(regex)
         if (!matches) {
-            throw new Error("invalid text")
+            return ["", new Error("invalid matches")]
         }
-        return matches[1]
+        return [matches[1], null]
     }
 }
