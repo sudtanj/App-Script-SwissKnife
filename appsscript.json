@@ -20,6 +20,7 @@
   "runtimeVersion": "V8",
   "oauthScopes": [
     "https://www.googleapis.com/auth/calendar.events.readonly",
-    "https://www.googleapis.com/auth/gmail.readonly"
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/script.external_request"
   ]
 }
