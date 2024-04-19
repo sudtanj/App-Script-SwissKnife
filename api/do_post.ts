@@ -26,6 +26,7 @@ function isTodayOutOfOfficeHandler() {
     return res ?  ResponderHelper.sendSuccess(res) :  ResponderHelper.sendNotFound(res)
 }
 
+// get latest email from gog regarding 2fa token and show it on private api
 function getGOGToken() {
     const message = GmailHelper.findLatestGOG2FAAuthTokenMessage()
     const body = message.getPlainBody()
