@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-      "allowJs": true,
-      "checkJs": true,
-      "types": ["google-apps-script"],
-    "lib": [
-      "decorators",
-      "dom",
-      "es5",
-      "scripthost",
-      "ES2015.Collection", "ES2015.Iterable", "ES2015"
-    ]
-  }
+    "module": "CommonJS",
+    "target": "ES2019",
+    "lib": ["es6", "dom"],
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "outDir": "./dist"
+  },
+  "exclude": ["node_modules"]
 }

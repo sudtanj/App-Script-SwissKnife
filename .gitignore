@@ -1,3 +1,4 @@
 .idea/
 .clasp.json
 node_modules/
+.clasprc.json

@@ -3,14 +3,14 @@ import {TimeUtils} from "../lib/time_utils";
 
 export async function run_steam_gifts_worker() {
     const steamGiftToken = PropertiesService.getScriptProperties().getProperty("steam_gifts_token")
-    const lib = new SteamGiftsLib(steamGiftToken)
+    const lib = new SteamGiftsLib(steamGiftToken ?? "")
     lib.fetchHTMLByPage(1)
     lib.parseCurrentPoint()
     lib.parseXSRFToken()
     const codes = lib.getGiveawayList()
     for (const code of codes) {
         const res = lib.joinGiveaway(code)
-        if (lib.currentPoint < 20) {
+        if ((lib.currentPoint ?? 0) < 20) {
             break
         }
         Logger.log(res)

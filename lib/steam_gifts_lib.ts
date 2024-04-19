@@ -20,9 +20,9 @@ export class SteamGiftsLib {
 
     // properties
     cookieId: string
-    xsrfToken: string
-    currentPoint: number
-    cacheHtml: string
+    xsrfToken?: string
+    currentPoint?: number
+    cacheHtml?: string
 
     constructor(cookieId: string) {
         if (typeof cookieId != "string" || cookieId.length <= 0) {
@@ -75,7 +75,7 @@ export class SteamGiftsLib {
         const regex = /href="\/giveaway\/([a-zA-Z0-9]*?)\/[^\/]*?">([^<>]*)</g;
         const res: Set<string> = new Set();
 
-        const htmlData = this.cacheHtml
+        const htmlData = this.cacheHtml ?? ""
 
         let match;
         while ((match = regex.exec(htmlData)) !== null) {
@@ -102,7 +102,7 @@ export class SteamGiftsLib {
 
     joinGiveaway(code: string) {
         const body: JoinGiveawayPayload = {
-            xsrf_token: this.xsrfToken,
+            xsrf_token: this.xsrfToken ?? "",
             code,
             do: "entry_insert",
         }
