@@ -1,0 +1,24 @@
+name: Deploy Apps Script
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to Apps Script
+        uses: daikikatsuragawa/clasp-action@v1
+        with:
+          accessToken: ${{ secrets.ACCESS_TOKEN }}
+          idToken: ${{ secrets.ID_TOKEN }}
+          refreshToken: ${{ secrets.REFRESH_TOKEN }}
+          clientId: ${{ secrets.CLIENT_ID }}
+          clientSecret: ${{ secrets.CLIENT_SECRET }}
+          scriptId: ${{ secrets.SCRIPT_ID }}
+          command: 'push'
