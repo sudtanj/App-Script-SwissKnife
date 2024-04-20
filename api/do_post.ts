@@ -4,6 +4,8 @@ import {GoogleCalendarHelper} from "../lib/google_calendar_helper";
 import {ResponderHelper} from "../lib/responder_helper";
 import {GmailHelper} from "../lib/gmail_helper";
 import {GOGHelper} from "../lib/gog_helper";
+import {TelegramBot} from "../lib/telegram_bot";
+import {TelegramWebhookPayload} from "../interface/telegram_webhook_payload";
 
 function doPost(e: GetEvent) {
     const body: PostBody = JSON.parse(e.postData.contents) as PostBody
@@ -36,9 +38,14 @@ function getGOGToken() {
     return err ? ResponderHelper.sendNotFound(err) : ResponderHelper.sendSuccess(token)
 }
 
-function getTelegramUpdate(data: any) {
-    Logger.log("incoming connection from telegram")
-    Logger.log(data)
+function getTelegramUpdate(data: TelegramWebhookPayload) {
+    const token = PropertiesService.getScriptProperties().getProperty("telegram_bot_token")
+    if (!token) {
+        return ResponderHelper.sendNotFound(new Error("invalid token"))
+    }
+    const bot = new TelegramBot(token)
 
-    return ResponderHelper.sendSuccess(data)
+    bot.sendMessage(data.message.chat?.id, "message received!")
+
+    return ResponderHelper.sendSuccess({})
 }
