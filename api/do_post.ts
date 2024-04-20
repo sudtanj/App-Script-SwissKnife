@@ -26,6 +26,7 @@ function doPost(e: GetEvent) {
                 return ResponderHelper.sendNotFound("invalid path!")
         }
     } catch (e) {
+        console.error(e)
         return ResponderHelper.sendSuccess("something wrong with the server! we're working on it!")
     }
 }
