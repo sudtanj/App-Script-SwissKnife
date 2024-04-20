@@ -9,6 +9,7 @@ export class TelegramBot {
         this.botSecret = botSecret
     }
 
+    // url = https://telegram-bot-sdk.readme.io/reference/sendmessage
     sendMessage(chatId: number, message: string) {
         const url = `https://api.telegram.org/bot${this.botSecret}/sendMessage`
         const params: URLFetchRequestOptions = {
@@ -22,13 +23,14 @@ export class TelegramBot {
         return JSON.parse(res.getContentText()) as TelegramSendMessageResponse
     }
 
-    sendPhoto(chatId: number, photoUrl: string, caption: string) {
+    // url = https://telegram-bot-sdk.readme.io/reference/sendphoto
+    sendPhoto(chatId: number, photo: string | GoogleAppsScript.Base.Blob, caption?: string) {
         const url = `https://api.telegram.org/bot${this.botSecret}/sendPhoto`
         const params: URLFetchRequestOptions = {
             method: 'post',
             payload: {
                 chat_id: String(chatId),
-                photo: photoUrl,
+                photo: photo,
                 caption,
             },
         }
