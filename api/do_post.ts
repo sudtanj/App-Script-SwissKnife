@@ -6,6 +6,7 @@ import {GmailHelper} from "../lib/gmail_helper";
 import {GOGHelper} from "../lib/gog_helper";
 import {TelegramBot} from "../lib/telegram_bot";
 import {TelegramWebhookPayload} from "../interface/telegram_webhook_payload";
+import {TelegramHandler} from "./telegram_handler";
 
 function doPost(e: GetEvent) {
     const body: PostBody = JSON.parse(e.postData.contents) as PostBody
@@ -43,9 +44,9 @@ function getTelegramUpdate(data: TelegramWebhookPayload) {
     if (!token) {
         return ResponderHelper.sendNotFound(new Error("invalid token"))
     }
-    const bot = new TelegramBot(token)
+    const handler = new TelegramHandler(data, token)
 
-    bot.sendMessage(data.message.chat?.id, "message received!")
+    const response = handler.process()
 
-    return ResponderHelper.sendSuccess({})
+    return ResponderHelper.sendSuccess(response)
 }
