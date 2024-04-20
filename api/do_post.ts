@@ -14,15 +14,19 @@ function doPost(e: GetEvent) {
     if (body.secretToken != secretToken) {
         return ResponderHelper.sendUnauthorized("invalid token " + body.secretToken)
     }
-    switch (body.path) {
-        case PostBodyPath.IS_TODAY_OUT_OF_OFFICE:
-            return isTodayOutOfOfficeHandler()
-        case PostBodyPath.GOG_TOKEN:
-            return getGOGToken()
-        case PostBodyPath.TELEGRAM_BOT_WEBHOOK:
-            return getTelegramUpdate(body.data)
-        default:
-            return ResponderHelper.sendNotFound("invalid path!")
+    try {
+        switch (body.path) {
+            case PostBodyPath.IS_TODAY_OUT_OF_OFFICE:
+                return isTodayOutOfOfficeHandler()
+            case PostBodyPath.GOG_TOKEN:
+                return getGOGToken()
+            case PostBodyPath.TELEGRAM_BOT_WEBHOOK:
+                return getTelegramUpdate(body.data)
+            default:
+                return ResponderHelper.sendNotFound("invalid path!")
+        }
+    } catch (e) {
+        return ResponderHelper.sendSuccess("something wrong with the server! we're working on it!")
     }
 }
 
