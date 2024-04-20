@@ -37,5 +37,6 @@ function getGOGToken() {
 }
 
 function getTelegramUpdate(data: any) {
-    console.log(data)
+    Logger.log("incoming connection from telegram")
+    Logger.log(data)
 }
