@@ -39,4 +39,6 @@ function getGOGToken() {
 function getTelegramUpdate(data: any) {
     Logger.log("incoming connection from telegram")
     Logger.log(data)
+
+    return ResponderHelper.sendSuccess(data)
 }
