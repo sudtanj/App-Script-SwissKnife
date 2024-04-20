@@ -16,6 +16,8 @@ function doPost(e: GetEvent) {
             return isTodayOutOfOfficeHandler()
         case PostBodyPath.GOG_TOKEN:
             return getGOGToken()
+        case PostBodyPath.TELEGRAM_BOT_WEBHOOK:
+            return getTelegramUpdate(body.data)
         default:
             return ResponderHelper.sendNotFound("invalid path!")
     }
@@ -32,4 +34,8 @@ function getGOGToken() {
     const body = message.getPlainBody()
     const [token, err] = GOGHelper.parseAndFindTokenFromMail(body)
     return err ? ResponderHelper.sendNotFound(err) : ResponderHelper.sendSuccess(token)
+}
+
+function getTelegramUpdate(data: any) {
+    console.log(data)
 }
