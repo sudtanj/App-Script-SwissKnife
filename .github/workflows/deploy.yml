@@ -22,7 +22,6 @@ jobs:
           clientSecret: ${{ secrets.CLIENT_SECRET }}
           scriptId: ${{ secrets.SCRIPT_ID }}
           deployId: ${{ secrets.DEPLOY_ID }}
-          rootDir: "./"
           command: 'push'
 
       - name: Deploy to Apps Script
