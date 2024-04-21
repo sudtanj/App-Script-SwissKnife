@@ -17,4 +17,12 @@ export class TravoyService {
         const url = TravoyService.getCCTVLink(id)
         return ScreenshotService.takeAsUrl(url, id, 1024, 768, 352, 288)
     }
+
+    static getImageFromCCTV(id: TravoyEnum) {
+        const url = TravoyService.getCCTVLink(id)
+        const res = UrlFetchApp.fetch(url).getContentText()
+        const imgUrlRegex = /<img[^>]+src="([^">]+)"/i
+
+        return imgUrlRegex.exec(res)
+    }
 }
