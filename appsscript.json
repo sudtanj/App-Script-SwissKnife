@@ -21,7 +21,7 @@
   "oauthScopes": [
     "https://www.googleapis.com/auth/calendar.events.readonly",
     "https://www.googleapis.com/auth/gmail.readonly",
-    "https://www.googleapis.com/auth/script.external_request",
+    "https://www.googleapis.com/auth/script.external_request"
   ],
   "webapp": {
     "executeAs": "USER_DEPLOYING",
