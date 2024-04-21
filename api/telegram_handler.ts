@@ -1,6 +1,6 @@
 import {TelegramWebhookPayload} from "../interface/telegram_webhook_payload";
 import {TelegramBot} from "../lib/telegram_bot";
-import {ScreenshotService} from "../lib/screenshot_service";
+import {TravoyEnum, TravoyService} from "../lib/travoy_service";
 
 export enum TelegramCommandEnum {
     TIME = "time",
@@ -35,8 +35,8 @@ export class TelegramHandler {
     }
 
     handleTestScreenshot() {
-        const screenshot = ScreenshotService.take("http://detik.com", "detik")
-        this.bot.sendPhoto(this.data.message.chat.id, screenshot, "test")
+        const screenshot = TravoyService.getScreenshotOfCCTV(TravoyEnum.JORR_W2S_KM_18_000)
+        this.bot.sendPhoto(this.data.message.chat.id, screenshot, TravoyEnum.JORR_W2S_KM_18_000)
 
         return 'success'
     }
