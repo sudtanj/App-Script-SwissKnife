@@ -20,12 +20,6 @@ export class TravoyService {
 
     static getImageFromCCTV(id: TravoyEnum) {
         const url = TravoyService.getCCTVLink(id)
-        const res = UrlFetchApp.fetch(url).getContentText()
-
-        return Utilities.newBlob(
-            Utilities.base64Decode(res),
-            "image/png",
-            id
-        )
+        return UrlFetchApp.fetch(url).getBlob()
     }
 }

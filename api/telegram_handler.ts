@@ -35,7 +35,7 @@ export class TelegramHandler {
     }
 
     handleTestScreenshot() {
-        const screenshot = TravoyService.getScreenshotOfCCTV(TravoyEnum.JORR_W2S_KM_18_000)
+        const screenshot = TravoyService.getImageFromCCTV(TravoyEnum.JORR_W2S_KM_18_000)
         this.bot.sendPhoto(this.data.message.chat.id, screenshot, TravoyEnum.JORR_W2S_KM_18_000)
 
         return 'success'
