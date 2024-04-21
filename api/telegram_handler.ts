@@ -41,9 +41,9 @@ export class TelegramHandler {
         const travoyEnums: TravoyEnum[] = JSON.parse(travoyEnumStr ?? "")
 
         const client = new GoogleMapsClient(mapsToken ?? "")
-        const resGone = client.getTimeEstimate(origin ?? "", dest ?? "", today.toString())
+        const resGone = client.getTimeEstimate(origin ?? "", dest ?? "", today.getTime().toString())
 
-        const resComeBack = client.getTimeEstimate(dest ?? "", origin ?? "", today.toString())
+        const resComeBack = client.getTimeEstimate(dest ?? "", origin ?? "", today.getTime().toString())
 
         this.bot.sendMessage(this.data.message.chat.id, `Current prediction for if going ${JSON.stringify(resGone)} and if coming back ${JSON.stringify(resComeBack)}`)
 

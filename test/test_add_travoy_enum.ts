@@ -6,5 +6,5 @@ function TestAddTravoyEnum() {
         TravoyEnum.JORR_W2S_KM_18_000
     ]
 
-    PropertiesService.getScriptProperties().setProperty(constant, enumList.toString())
+    PropertiesService.getScriptProperties().setProperty(constant, JSON.stringify(enumList))
 }

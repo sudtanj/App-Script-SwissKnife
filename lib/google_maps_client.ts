@@ -10,14 +10,16 @@ export class GoogleMapsClient {
 
 	getTimeEstimate(origin: string, dest: string, departTime: string) {
 		const urlDat  = "https://maps.googleapis.com/maps/api/directions/json"
-		UrlStringHelper.addQuery(urlDat, {
+		const url = UrlStringHelper.addQuery(urlDat, {
 			origin: origin,
 			destination: dest,
 			key: this.key,
 			traffic_model: "best_guess",
 			departure_time: departTime,
 		})
-		const resData = UrlFetchAppHelper.fetchAsObject<any>(urlDat, {})
+		const resData = UrlFetchAppHelper.fetchAsObject<any>(url, {
+			muteHttpExceptions: true
+		})
 		const duration = resData?.routes?.[0]?.legs?.[0]?.duration_in_traffic
 
 		return duration as { text: string, value: number }
