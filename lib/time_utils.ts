@@ -5,12 +5,13 @@ export class TimeUtils {
     }
 
     static getStartDate(date: Date): Date {
-        date.setUTCHours(0,0,0,0);
+        date.setUTCDate(date.getUTCDate() - 1)
+        date.setUTCHours(16,0,0,0);
         return date
     }
 
     static getEndDate(date: Date): Date {
-        date.setUTCHours(23,59,59,999);
+        date.setUTCHours(16,59,59,999);
         return date
     }
 }
