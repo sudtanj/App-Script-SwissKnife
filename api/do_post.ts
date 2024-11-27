@@ -32,7 +32,7 @@ function doPost(e: GetEvent) {
 }
 
 function isTodayOutOfOfficeHandler() {
-    const res = GoogleCalendarHelper.isTodayOutOfOffice()
+    const res = GoogleCalendarHelper.isTodayOutOfOffice(new Date())
     return res ?  ResponderHelper.sendSuccess(res) :  ResponderHelper.sendNotFound(res)
 }
 

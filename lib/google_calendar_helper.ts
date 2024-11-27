@@ -1,8 +1,7 @@
 import {TimeUtils} from "./time_utils";
 
 export class GoogleCalendarHelper {
-    static isTodayOutOfOffice() {
-        const todayDate = new Date()
+    static isTodayOutOfOffice(todayDate: Date) {
         const calendarId = PropertiesService.getScriptProperties().getProperty("calendar_id")
         if (!calendarId || calendarId?.length <= 0) {
             return false
