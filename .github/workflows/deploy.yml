@@ -12,15 +12,32 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Deploy to Apps Script
-        uses: daikikatsuragawa/clasp-action@v1.1.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          accessToken: ${{ secrets.ACCESS_TOKEN }}
-          idToken: ${{ secrets.ID_TOKEN }}
-          refreshToken: ${{ secrets.REFRESH_TOKEN }}
-          clientId: ${{ secrets.CLIENT_ID }}
-          clientSecret: ${{ secrets.CLIENT_SECRET }}
-          scriptId: ${{ secrets.SCRIPT_ID }}
-          deployId: ${{ secrets.DEPLOY_ID }}
-          rootDir: "./"
-          command: 'deploy'
+          node-version: 'latest'  # Specifies the latest version of Node.js
+
+      - name: Install clasp globally
+        run: npm install -g @google/clasp
+
+      - name: Insert config to main folder
+        run: ${{ secrets.clasprc_json }} > clasprc.json
+
+      - name: Clasp push
+        run: clasp push -f
+
+      - name: Clasp deploy
+        run: clasp deploy -i ${{ secrets.DEPLOY_ID }} -d ${{ github.event.head_commit.message }} -V $(git rev-parse --short "$GITHUB_SHA")
+
+#      - name: Deploy to Apps Script
+#        uses: daikikatsuragawa/clasp-action@v1.1.0
+#        with:
+#          accessToken: ${{ secrets.ACCESS_TOKEN }}
+#          idToken: ${{ secrets.ID_TOKEN }}
+#          refreshToken: ${{ secrets.REFRESH_TOKEN }}
+#          clientId: ${{ secrets.CLIENT_ID }}
+#          clientSecret: ${{ secrets.CLIENT_SECRET }}
+#          scriptId: ${{ secrets.SCRIPT_ID }}
+#          deployId: ${{ secrets.DEPLOY_ID }}
+#          rootDir: "./"
+#          command: 'deploy'
