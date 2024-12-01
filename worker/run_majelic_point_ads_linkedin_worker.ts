@@ -16,7 +16,7 @@ export function run_majestic_point_ads_linkedin_worker() {
        
         Don’t miss your chance to call this beautiful apartment home! Visit the link https://bit.ly/majestic-point-rent for viewing today! 🏡✨
 
-        #MajesticPointSerpong #FurnishedApartment #TangerangSelatan #ForRent #2BedroomApartment #ApartmentLiving #serpongcity #bsdserpong #serpong
+        #MajesticPointSerpong #FurnishedApartment #TangerangSelatan #ForRent #2BedroomApartment #ApartmentLiving #serpongcity #bsdserpong #serpong #serpong #serpongbsd #serpongnaturacity #serpongcity #serpongcityss #serponggarden #serponggardenapartment #serpongutara
    `
     const imageUrl = "https://i.imgur.com/J5OOMVk.jpeg"
     const link = "https://bit.ly/majestic-point-rent"
