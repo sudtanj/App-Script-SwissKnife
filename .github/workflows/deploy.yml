@@ -25,6 +25,9 @@ jobs:
         env:
           CLASP_JSON: ${{ secrets.clasprc_json }}
 
+      - name: Clasp login globally
+        run: clasp login --creds ./.clasprc.json
+
       - name: Clasp push
         run: clasp push -f
 
