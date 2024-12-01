@@ -1,4 +1,5 @@
 import {SocialMediaZapierCall} from "./social_media_zapier_lib";
+import {TimeUtils} from "./time_utils";
 
 export interface SocialMediaAutoPayload {
     title: string;
@@ -31,6 +32,8 @@ export class SocialMediaAutoPost {
         }
 
         SocialMediaZapierCall.triggerSocialMediaPost(linkedinWebHookUrl, usePayload)
+        // add delay to prevent too much spam
+        TimeUtils.sleepRandBetween(1000, 2000)
         SocialMediaZapierCall.triggerSocialMediaPost(facebookWebHook, usePayload)
     }
 }
