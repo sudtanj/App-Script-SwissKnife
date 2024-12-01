@@ -20,7 +20,7 @@ export class MajesticPointAdsWorker {
         #MajesticPointSerpong #FurnishedApartment #TangerangSelatan #ForRent #2BedroomApartment #ApartmentLiving #serpongcity #bsdserpong #serpong #serpong #serpongbsd #serpongnaturacity #serpongcity #serpongcityss #serponggarden #serponggardenapartment #serpongutara
     `;
 
-    public static runLinkedinWorker(): void {
+    public static run(): void {
         SocialMediaAutoPost.run({
             title: this.TITLE,
             body: this.BODY,
