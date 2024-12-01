@@ -1,6 +1,7 @@
-import {LinkedInZapierCall} from "../lib/linkedin_zapier_lib";
+import {SocialMediaZapierCall} from "../lib/social_media_zapier_lib";
+import {run_social_media_auto_post} from "../lib/social_media_auto_post";
 
-export function run_spring_wood_ads_linkedin_worker() {
+export function run_spring_wood_ads_worker() {
     const title = "Stunning City View Studio Apartment at Springwood Residence, Tangerang, Indonesia"
     const body = `
         ✨ Discover Your Dream Home at Springwood Residence! 🌿
@@ -15,19 +16,11 @@ export function run_spring_wood_ads_linkedin_worker() {
     const imageUrl = "https://i.imgur.com/wNF3L5X.jpeg"
     const link = "https://bit.ly/rent-springwood"
 
-    const token = PropertiesService.getScriptProperties().getProperty("linkedin_zapier_token")
-    if (!token) {
-        Logger.log("invalid token")
-        return
-    }
-    const webHookUrl = PropertiesService.getScriptProperties().getProperty("linkedin_zapier_webhook_url")
-    if (!webHookUrl) {
-        Logger.log("invalid webhook")
-        return
-    }
-
-    LinkedInZapierCall.triggerLinkedInPost(webHookUrl, {
-        title, token, body, link, imageUrl
+    run_social_media_auto_post({
+        title: title,
+        body: body,
+        link: link,
+        imageUrl: imageUrl,
     })
 
 }

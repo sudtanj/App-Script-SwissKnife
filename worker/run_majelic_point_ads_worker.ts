@@ -1,4 +1,5 @@
-import {LinkedInZapierCall} from "../lib/linkedin_zapier_lib";
+import {SocialMediaZapierCall} from "../lib/social_media_zapier_lib";
+import {run_social_media_auto_post} from "../lib/social_media_auto_post";
 
 
 export function run_majestic_point_ads_linkedin_worker() {
@@ -21,19 +22,10 @@ export function run_majestic_point_ads_linkedin_worker() {
     const imageUrl = "https://i.imgur.com/J5OOMVk.jpeg"
     const link = "https://bit.ly/majestic-point-rent"
 
-    const token = PropertiesService.getScriptProperties().getProperty("linkedin_zapier_token")
-    if (!token) {
-        Logger.log("invalid token")
-        return
-    }
-    const webHookUrl = PropertiesService.getScriptProperties().getProperty("linkedin_zapier_webhook_url")
-    if (!webHookUrl) {
-        Logger.log("invalid webhook")
-        return
-    }
-
-    LinkedInZapierCall.triggerLinkedInPost(webHookUrl, {
-        title, token, body, link, imageUrl
+    run_social_media_auto_post({
+        title: title,
+        body: body,
+        link: link,
+        imageUrl: imageUrl,
     })
-
 }
