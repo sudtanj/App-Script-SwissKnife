@@ -21,9 +21,10 @@ jobs:
         run: npm install -g @google/clasp
 
       - name: Insert config to main folder
-        run: echo $CLASP_JSON > .clasprc.json
+        run: echo $CLASP_SETTINGS_JSON > .clasprc.json & echo $CLASP_JSON > .clasp.json
         env:
-          CLASP_JSON: ${{ secrets.clasprc_json }}
+          CLASP_SETTINGS_JSON: ${{ secrets.clasprc_json }}
+          CLASP_JSON: ${{ secrets.clasp_json }}
 
       - name: Clasp login globally
         run: clasp login --creds ./.clasprc.json
