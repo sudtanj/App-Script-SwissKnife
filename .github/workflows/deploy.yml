@@ -21,7 +21,9 @@ jobs:
         run: npm install -g @google/clasp
 
       - name: Insert config to main folder
-        run: '${{ secrets.clasprc_json }}' > clasprc.json
+        run: echo $CLASP_JSON > clasprc.json
+        env:
+          CLASP_JSON: ${{ secrets.clasprc_json }}
 
       - name: Clasp push
         run: clasp push -f
