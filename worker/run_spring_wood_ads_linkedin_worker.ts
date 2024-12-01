@@ -4,8 +4,6 @@ export async function run_spring_wood_ads_linkedin_worker() {
     const title = "Stunning City View Studio Apartment at Springwood Residence, Tangerang, Indonesia"
     const body = `
         ✨ Discover Your Dream Home at Springwood Residence! 🌿
-
-        ✨ Discover Your Dream Home at Springwood Residence! ?
         
         Experience modern living in the heart of Tangerang Selatan! This stunning rental unit offers spacious interiors, top-notch amenities, and beautiful views. Enjoy the convenience of nearby shopping, dining, and parks—all just steps away! ?️?
         
