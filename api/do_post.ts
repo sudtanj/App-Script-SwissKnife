@@ -4,7 +4,6 @@ import {GoogleCalendarHelper} from "../lib/google_calendar_helper";
 import {ResponderHelper} from "../lib/responder_helper";
 import {GmailHelper} from "../lib/gmail_helper";
 import {GOGHelper} from "../lib/gog_helper";
-import {TelegramBot} from "../lib/telegram_bot";
 import {TelegramWebhookPayload} from "../interface/telegram_webhook_payload";
 import {TelegramHandler} from "./telegram_handler";
 

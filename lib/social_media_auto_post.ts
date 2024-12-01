@@ -1,4 +1,4 @@
-import {SocialMediaPayload, SocialMediaZapierCall} from "./social_media_zapier_lib";
+import {SocialMediaZapierCall} from "./social_media_zapier_lib";
 
 export interface SocialMediaAutoPayload {
     title: string;

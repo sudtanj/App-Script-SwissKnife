@@ -1,4 +1,4 @@
-import {ZapierWebhook,ZapierResponse} from "./zapier_lib";
+import {ZapierResponse, ZapierWebhook} from "./zapier_lib";
 
 /**
  * The structure of the LinkedIn payload.
