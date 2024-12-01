@@ -1,4 +1,4 @@
-import {run_social_media_auto_post} from "../lib/social_media_auto_post";
+import {SocialMediaAutoPost} from "../lib/social_media_auto_post";
 
 export class MajesticPointAdsWorker {
     private static readonly TITLE = "Luxurious 2BR Majestic Point Serpong: Your Urban Retreat in Tangerang";
@@ -21,7 +21,7 @@ export class MajesticPointAdsWorker {
     `;
 
     public static runLinkedinWorker(): void {
-        run_social_media_auto_post({
+        SocialMediaAutoPost.run({
             title: this.TITLE,
             body: this.BODY,
             link: this.LINK,
