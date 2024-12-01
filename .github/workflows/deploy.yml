@@ -30,7 +30,7 @@ jobs:
         run: clasp -A ./.clasprc.json -P ./.clasp.json push -f
 
       - name: Clasp deploy
-        run: clasp -A ./.clasprc.json -P ./.clasp.json deploy -i ${{ secrets.DEPLOY_ID }} -d ${{ github.event.head_commit.message }} -V $(git rev-parse --short "$GITHUB_SHA")
+        run: clasp -A ./.clasprc.json -P ./.clasp.json deploy -i ${{ secrets.DEPLOY_ID }} -d ${{ github.event.head_commit.message }} -V ${{ github.run_number }}
 
 #      - name: Deploy to Apps Script
 #        uses: daikikatsuragawa/clasp-action@v1.1.0
