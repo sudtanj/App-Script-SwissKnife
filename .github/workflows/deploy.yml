@@ -17,6 +17,14 @@ jobs:
         with:
           node-version: 'latest'  # Specifies the latest version of Node.js
 
+      - name: Cache Node.js modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm # Location of the Node.js cache
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install clasp globally
         run: npm install -g @google/clasp
 
