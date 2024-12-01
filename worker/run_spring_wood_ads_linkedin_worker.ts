@@ -1,6 +1,6 @@
 import {LinkedInZapierCall} from "../lib/linkedin_zapier_lib";
 
-export async function run_spring_wood_ads_linkedin_worker() {
+export function run_spring_wood_ads_linkedin_worker() {
     const title = "Stunning City View Studio Apartment at Springwood Residence, Tangerang, Indonesia"
     const body = `
         ✨ Discover Your Dream Home at Springwood Residence! 🌿
