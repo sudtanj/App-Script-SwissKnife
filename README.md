@@ -157,3 +157,13 @@ POST /
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 💙 Support My Work
+
+If you find my work helpful, consider supporting me:
+
+[![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.me/sudtanj)
+
+### Donate Bitcoin:
+<img src="https://i.imgur.com/tlwaL97.png" alt="Bitcoin QR Code" width="350"/>  
+**Bitcoin Address:** `32Ja5bcaAAYXFjKCRmcYe3SM2RsSUCmXtQ`
