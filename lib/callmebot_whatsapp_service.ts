@@ -16,17 +16,19 @@ export class CallMeBotWhatsAppAPI {
      * @throws Error if the API key is not found in script properties or an error occurs during the API request.
      */
     public static async sendMessage(message: string): Promise<void> {
+        // get api key from properties services
         const apiKey = PropertiesService.getScriptProperties().getProperty('call_me_bot_api_key');
         if (!apiKey) {
             throw new Error('API key not found in script properties. Please set the "call_me_bot_api_key" property.');
         }
 
+        // get phone number from properties services
         const targetPhoneNumber = PropertiesService.getScriptProperties().getProperty('call_me_bot_target_phone');
         if (!targetPhoneNumber) {
             throw new Error('Target phone number not found in script properties. Please set the "call_me_bot_target_phone" property.');
         }
 
-        const url = `https://api.callmebot.com/whatsapp.php?phone=${phoneNumber}&text=${message}&apikey=${apiKey}`;
+        const url = `https://api.callmebot.com/whatsapp.php?phone=${targetPhoneNumber}&text=${message}&apikey=${apiKey}`;
 
         try {
             const response = await fetch(url);
