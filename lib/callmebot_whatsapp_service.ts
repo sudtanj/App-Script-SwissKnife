@@ -34,7 +34,7 @@ export class CallMeBotWhatsAppAPI {
 
         try {
             const [response, err] = await UrlFetchAppHelper.fetchAsObject<any>(url, {});
-            Logger.log(`Response = ${JSON.stringify(response)}`)
+            Logger.log(`Call Me Bot Whatsapp Response Body = ${response}`)
             if (!response.ok || err) {
                 throw new Error(`Error sending message: ${response.statusText}`);
             }
