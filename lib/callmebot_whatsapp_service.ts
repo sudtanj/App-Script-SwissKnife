@@ -33,7 +33,7 @@ class CallMeBotWhatsAppAPI {
             if (!response.ok) {
                 throw new Error(`Error sending message: ${response.statusText}`);
             }
-            console.log('Message sent successfully!');
+            console.log('Message sent successfully! response = ' + JSON.stringify(response));
         } catch (error) {
             console.error('Error sending message:', error);
             throw error;
