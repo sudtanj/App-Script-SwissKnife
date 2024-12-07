@@ -3,6 +3,12 @@ import URLFetchRequestOptions = GoogleAppsScript.URL_Fetch.URLFetchRequestOption
 export class UrlFetchAppHelper {
     static fetchAsObject<T extends any>(url: string, params: URLFetchRequestOptions): T {
         const respTxt = UrlFetchApp.fetch(url, params).getContentText();
-        return JSON.parse(respTxt) as T
+        try {
+            const res = JSON.parse(respTxt) as T
+            return res
+        } catch (e) {
+            Logger.log(`unable to parse json, response ${respTxt}`)
+            return respTxt as T
+        }
     }
 }
