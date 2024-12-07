@@ -30,10 +30,11 @@ export class CallMeBotWhatsAppAPI {
 
         try {
             const response = await fetch(url);
+            Logger.log(`Response = ${JSON.stringify(response)}`)
             if (!response.ok) {
                 throw new Error(`Error sending message: ${response.statusText}`);
             }
-            console.log('Message sent successfully! response = ' + JSON.stringify(response));
+            console.log('Message sent successfully!');
         } catch (error) {
             console.error('Error sending message:', error);
             throw error;
