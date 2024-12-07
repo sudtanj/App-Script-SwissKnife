@@ -1,3 +1,19 @@
+/**
+ * steam_gifts_lib.ts
+ * 
+ * This library provides functionality to interact with the SteamGifts website.
+ * It includes methods to fetch HTML pages, parse XSRF tokens, get giveaway lists,
+ * parse current points, and join giveaways.
+ * 
+ * Usage:
+ * const steamGifts = new SteamGiftsLib('your_cookie_id');
+ * steamGifts.fetchHTMLByPage(1);
+ * steamGifts.parseXSRFToken();
+ * const giveaways = steamGifts.getGiveawayList();
+ * const points = steamGifts.parseCurrentPoint();
+ * const response = steamGifts.joinGiveaway('giveaway_code');
+ */
+
 import URLFetchRequestOptions = GoogleAppsScript.URL_Fetch.URLFetchRequestOptions;
 import HttpHeaders = GoogleAppsScript.URL_Fetch.HttpHeaders;
 import {UrlFetchAppHelper} from "./url_fetch_app_helper";
@@ -15,7 +31,7 @@ export interface JoinGiveawayResponse {
 }
 
 export class SteamGiftsLib {
-    // ocnstant properties
+    // constant properties
     URL = 'https://www.steamgifts.com'
 
     // properties
