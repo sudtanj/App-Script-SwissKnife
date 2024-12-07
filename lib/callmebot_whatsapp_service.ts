@@ -1,3 +1,5 @@
+import { UrlFetchAppHelper } from "./url_fetch_app_helper";
+
 /**
  * This class provides a convenient way to interact with the CallMeBot WhatsApp API
  * for sending text messages.
@@ -31,9 +33,9 @@ export class CallMeBotWhatsAppAPI {
         const url = `https://api.callmebot.com/whatsapp.php?phone=${targetPhoneNumber}&text=${message}&apikey=${apiKey}`;
 
         try {
-            const response = await fetch(url);
+            const [response, err] = await UrlFetchAppHelper.fetchAsObject<any>(url, {});
             Logger.log(`Response = ${JSON.stringify(response)}`)
-            if (!response.ok) {
+            if (!response.ok || err) {
                 throw new Error(`Error sending message: ${response.statusText}`);
             }
             console.log('Message sent successfully!');
