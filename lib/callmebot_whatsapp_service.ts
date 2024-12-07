@@ -8,7 +8,7 @@
  *   https://www.callmebot.com/blog/free-api-whatsapp-messages/
  * - Make sure your Google Apps Script project has the necessary permissions (like UrlFetch) enabled.
  */
-class CallMeBotWhatsAppAPI {
+export class CallMeBotWhatsAppAPI {
     /**
      * Sends a WhatsApp text message to the provided phone number.
      *
