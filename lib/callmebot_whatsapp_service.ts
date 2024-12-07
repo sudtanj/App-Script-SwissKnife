@@ -33,9 +33,9 @@ export class CallMeBotWhatsAppAPI {
         const url = `https://api.callmebot.com/whatsapp.php?phone=${targetPhoneNumber}&text=${message}&apikey=${apiKey}`;
 
         try {
-            const [response, err] = await UrlFetchAppHelper.fetchAsObject<any>(url, {});
+            const response = await UrlFetchAppHelper.fetchAsObject<any>(url, {});
             Logger.log(`Call Me Bot Whatsapp Response Body = ${response}`)
-            if (!response.ok || err) {
+            if (!response) {
                 throw new Error(`Error sending message: ${response.statusText}`);
             }
             console.log('Message sent successfully!');
