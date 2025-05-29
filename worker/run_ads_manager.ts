@@ -13,7 +13,7 @@ function run_ads_manager() {
     TimeUtils.sleepRandBetween(1000, 5000)
     RunGadingNiasAdsWorker.run()
     TimeUtils.sleepRandBetween(1000, 5000)
-    CitraRayaAdsWorker.run()
-    TimeUtils.sleepRandBetween(1000, 5000)
+    // CitraRayaAdsWorker.run()
+    // TimeUtils.sleepRandBetween(1000, 5000)
     MeikartaAdsWorker.run()
 }
