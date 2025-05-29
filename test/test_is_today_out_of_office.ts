@@ -1,5 +1,4 @@
-// import {GoogleCalendarHelper} from "../lib/google_calendar_helper";
-var GoogleCalendarHelper = this.GoogleCalendarHelper || GoogleCalendarHelper;
+import {GoogleCalendarHelper} from "../lib/google_calendar_helper";
 
 
 function TestIsTodayOutOfOffice() {
@@ -56,7 +55,7 @@ function TestIsNextTomorrowAt1830OutOfOffice() {
 }
 
 function TestIs29thAt1830OutOfOffice() {
-    const date = new Date("2024-11-29T11:30:00.000Z"); // Convert to UTC
+    const date = new Date("2025-05-29T11:30:00.000Z"); // Convert to UTC
     console.log(date.toString()); // Display the date in local time
     console.log(date.toISOString()); // Display the date in UTC
     const res = GoogleCalendarHelper.isTodayOutOfOffice(date)
@@ -64,7 +63,7 @@ function TestIs29thAt1830OutOfOffice() {
 }
 
 function TestIs30thAt1830OutOfOffice() {
-    const date = new Date("2024-11-30T11:30:00.000Z"); // Convert to UTC
+    const date = new Date("2025-05-30T11:30:00.000Z"); // Convert to UTC
     console.log(date.toString()); // Display the date in local time
     console.log(date.toISOString()); // Display the date in UTC
     const res = GoogleCalendarHelper.isTodayOutOfOffice(date)

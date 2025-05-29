@@ -18,32 +18,29 @@ export class TimeUtils {
     }
 
     /**
-     * Calculates the start date for a given date by setting the time to 16:00:00 UTC
-     * and subtracting one day.
-     * 
-     * Note: This calculation is based on GMT+7.
+     * Calculates the start date for a given date by setting the time to 00:00:00 local time (GMT+7).
      *
      * @param {Date} date - The input date.
      * @returns {Date} A new Date object representing the start date.
      */
     static getStartDate(date: Date): Date {
         const startDate = new Date(date); // Create a copy to avoid modifying the original date
-        startDate.setUTCDate(startDate.getUTCDate() - 1);
-        startDate.setUTCHours(16, 0, 0, 0); // This is effectively 00:00:00 GMT+7
+        startDate.setHours(0, 0, 0, 0); // Set to 00:00:00.000 local time
+        Logger.log('Start Date: ' + startDate.toString() + ' | ISO: ' + startDate.toISOString());
         return startDate;
     }
 
     /**
-     * Calculates the end date for a given date by setting the time to 16:59:59.999 UTC.
-     *
-     * Note: This calculation is based on GMT+7.
+     * Calculates the end date for a given date by setting the time to 23:59:59.999 local time (GMT+7).
      *
      * @param {Date} date - The input date.
      * @returns {Date} A new Date object representing the end date.
      */
     static getEndDate(date: Date): Date {
         const endDate = new Date(date); // Create a copy to avoid modifying the original date
-        endDate.setUTCHours(16, 59, 59, 999); // This is effectively 23:59:59.999 GMT+7
+        endDate.setDate(endDate.getDate() + 1); // Move to next day
+        endDate.setHours(0, 0, 0, 0); // Set to 00:00:00.000 local time of next day
+        Logger.log('End Date: ' + endDate.toString() + ' | ISO: ' + endDate.toISOString());
         return endDate;
     }
 }
