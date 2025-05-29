@@ -1,4 +1,5 @@
-import {GoogleCalendarHelper} from "../lib/google_calendar_helper";
+// import {GoogleCalendarHelper} from "../lib/google_calendar_helper";
+var GoogleCalendarHelper = this.GoogleCalendarHelper || GoogleCalendarHelper;
 
 
 function TestIsTodayOutOfOffice() {
