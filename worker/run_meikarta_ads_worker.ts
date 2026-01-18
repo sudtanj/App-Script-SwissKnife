@@ -21,7 +21,7 @@ export class MeikartaAdsWorker {
  
         #ApartmentForSale #MeikartaLiving #RealEstate #CikarangProperty #ModernLiving #PropertyInvestment #HomeSweetHome
     `;
-    private static readonly IMAGE_URL = "https://i.imgur.com/XTg1ELx.jpeg";
+    private static readonly IMAGE_URL = "https://i.ibb.co.com/RGBWZcMS/c25c8ffa-d843-45ab-8123-7d6a8bf5b7a9.jpg";
     private static readonly LINK = "https://bit.ly/meikarta-distrik-1";
 
     public static run(): void {

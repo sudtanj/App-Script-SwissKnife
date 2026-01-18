@@ -2,7 +2,7 @@ import {SocialMediaAutoPost} from "../lib/social_media_auto_post";
 
 export class RunGadingNiasAdsWorker {
     private static readonly TITLE = "Affordable and Minimalist 2BR Apartment at Gading Nias Residence";
-    private static readonly IMAGE_URL = "https://i.imgur.com/h6PUIPq.jpeg";
+    private static readonly IMAGE_URL = "https://i.ibb.co.com/rKRJC4gC/CSP-4091-l.jpg";
     private static readonly LINK = "https://bit.ly/rent-gading-nias";
     private static readonly BODY = `
         Looking for a cozy and affordable stay in Kelapa Gading? Check out the Affordable and Minimalist 2BR Apartment at Gading Nias Residence. This fully furnished apartment offers:

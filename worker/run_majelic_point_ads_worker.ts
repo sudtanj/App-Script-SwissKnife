@@ -2,7 +2,7 @@ import {SocialMediaAutoPost} from "../lib/social_media_auto_post";
 
 export class MajesticPointAdsWorker {
     private static readonly TITLE = "Luxurious 2BR Majestic Point Serpong: Your Urban Retreat in Tangerang";
-    private static readonly IMAGE_URL = "https://i.imgur.com/J5OOMVk.jpeg";
+    private static readonly IMAGE_URL = "https://i.ibb.co.com/0jyXnP3k/4-l-1.jpg";
     private static readonly LINK = "https://bit.ly/majestic-point-rent";
     private static readonly BODY = `
         🏢 For Rent: Stylish 2-Bedroom Apartment at Majestic Point Serpong! 🌟

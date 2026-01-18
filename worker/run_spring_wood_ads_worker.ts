@@ -12,7 +12,7 @@ export class SpringWoodAdsWorker {
         
         #SpringwoodResidence #TangerangSelatan #ApartmentLiving #DreamHome #serpong #bsdserpong #hotelroom #bedroomdecor #interiordesign #minimalism #cozyhome #tangerang #tangerangselatan #tangerangkota #tangerangolshop #tangerangfoodstory #tangerangfoodies #tangerangfood #tangerangkabupaten #tangerangculinary #tangerangcity
     `;
-    private static readonly IMAGE_URL = "https://i.imgur.com/wNF3L5X.jpeg";
+    private static readonly IMAGE_URL = "https://i.ibb.co.com/fjxVqFk/9-l.jpg";
     private static readonly LINK = "https://bit.ly/rent-springwood";
 
     public static run(): void {
